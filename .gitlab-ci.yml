@@ -41,6 +41,7 @@ deploy v0.4.1 with entrypoint:
   script:
     - make
     - make test/with-entrypoint
+    - make deploy
   only:
     - master
 
@@ -52,6 +53,7 @@ deploy v0.4.1 without entrypoint:
   script:
     - make
     - make test/without-entrypoint
+    - make deploy
   only:
     - master
 
@@ -63,6 +65,7 @@ deploy latest with entrypoint:
   script:
     - make
     - make test/with-entrypoint
+    - make deploy
   only:
     - master
 
@@ -74,5 +77,6 @@ deploy latest without entrypoint:
   script:
     - make
     - make test/without-entrypoint
+    - make deploy
   only:
     - master
