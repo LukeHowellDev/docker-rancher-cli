@@ -1,14 +1,15 @@
 # Rancher CLI Docker Image
 
-Small docker image with Rancher CLI for local use or CI
+This is the Git repo of the Docker image for [lukehowell/rancher-cli]().
 
 ## Development
 
-To build the docker image you will run `make` and rancher will be downloaded and the docker image built.
-
-Use environment variables to change build specifications.
+Run `make`.
+Rancher will be downloaded and the docker image built.
 
 ### Environment Variables
+
+Use environment variables to change build specifications.
 
 * ENTRYPOINT - The entrypoint for the docker image
 * VERSION - The Rancher CLI version to install
