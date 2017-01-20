@@ -47,8 +47,8 @@ deploy v0.4.1 with entrypoint:
 deploy v0.4.1 without entrypoint:
   stage: deploy
   variables:
-    VERSION: "v0.4.1-no-entrypoint"
-    TAG: "v0.4.1"
+    VERSION: "v0.4.1"
+    TAG: "v0.4.1-no-entrypoint"
   script:
     - make
     - make test/without-entrypoint
