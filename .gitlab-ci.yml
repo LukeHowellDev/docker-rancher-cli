@@ -33,7 +33,7 @@ test v0.4.1 without entrypoint:
     - make test/without-entrypoint
 
 deploy v0.4.1 with entrypoint:
-  stage: test
+  stage: deploy
   variables:
     VERSION: "v0.4.1"
     TAG: "v0.4.1"
@@ -45,7 +45,7 @@ deploy v0.4.1 with entrypoint:
     - master
 
 deploy v0.4.1 without entrypoint:
-  stage: test
+  stage: deploy
   variables:
     VERSION: "v0.4.1-no-entrypoint"
     TAG: "v0.4.1"
@@ -56,7 +56,7 @@ deploy v0.4.1 without entrypoint:
     - master
 
 deploy latest with entrypoint:
-  stage: test
+  stage: deploy
   variables:
     VERSION: "v0.4.1"
     ENTRYPOINT: "rancher"
@@ -67,7 +67,7 @@ deploy latest with entrypoint:
     - master
 
 deploy latest without entrypoint:
-  stage: test
+  stage: deploy
   variables:
     VERSION: "v0.4.1"
     TAG: "no-entrypoint"
