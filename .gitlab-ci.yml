@@ -1,0 +1,78 @@
+stages:
+  - test
+  - deploy
+
+image: docker
+
+services:
+  - docker:dind
+
+variables:
+  IMAGE: "lukehowell/rancher-cli"
+  TAG: "latest"
+
+before_script:
+  - apk update
+  - apk add m4 make
+
+test v0.4.1 with entrypoint:
+  stage: test
+  variables:
+    VERSION: "v0.4.1"
+    ENTRYPOINT: "rancher"
+  script:
+    - make
+    - make test/with-entrypoint
+
+test v0.4.1 without entrypoint:
+  stage: test
+  variables:
+    VERSION: "v0.4.1"
+  script:
+    - make
+    - make test/without-entrypoint
+
+deploy v0.4.1 with entrypoint:
+  stage: test
+  variables:
+    VERSION: "v0.4.1"
+    TAG: "v0.4.1"
+    ENTRYPOINT: "rancher"
+  script:
+    - make
+    - make test/with-entrypoint
+  only:
+    - master
+
+deploy v0.4.1 without entrypoint:
+  stage: test
+  variables:
+    VERSION: "v0.4.1-no-entrypoint"
+    TAG: "v0.4.1"
+  script:
+    - make
+    - make test/without-entrypoint
+  only:
+    - master
+
+deploy latest with entrypoint:
+  stage: test
+  variables:
+    VERSION: "v0.4.1"
+    ENTRYPOINT: "rancher"
+  script:
+    - make
+    - make test/with-entrypoint
+  only:
+    - master
+
+deploy latest without entrypoint:
+  stage: test
+  variables:
+    VERSION: "v0.4.1"
+    TAG: "no-entrypoint"
+  script:
+    - make
+    - make test/without-entrypoint
+  only:
+    - master
