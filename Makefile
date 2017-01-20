@@ -36,5 +36,6 @@ test/without-entrypoint:
 	@[ "`docker run $(IMAGE):$(TAG) rancher --version`" == "rancher version $(VERSION)" ] || exit 1
 
 deploy:
-	docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
-	docker push $(IMAGE):$(TAG)
+	@echo "Deploying to Docker Hub $(IMAGE):$(TAG)"
+	@docker login -u $(DOCKER_USERNAME) -p $(DOCKER_PASSWORD)
+	@docker push $(IMAGE):$(TAG)
