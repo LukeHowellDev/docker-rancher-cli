@@ -1,4 +1,4 @@
-FROM scratch
+FROM debian
 MAINTAINER Luke Howell <luke.howell@gmail.com>
 COPY rancher /bin/rancher
 ifdef(`ENTRYPOINT', ``ENTRYPOINT'' ["`ENTRYPOINT'"])
