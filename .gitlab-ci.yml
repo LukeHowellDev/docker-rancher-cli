@@ -8,7 +8,7 @@ services:
   - docker:dind
 
 variables:
-  IMAGE: "lukehowell/rancher-cli"
+  IMAGE: "lukehowelldev/rancher-cli"
   TAG: "latest"
   VERSION: "v0.4.1"
 
