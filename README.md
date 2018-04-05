@@ -1,3 +1,5 @@
+> This is no longer maintained. Since you can specify `entrypoint: []` in `gitlab-ci.yml`. Instead use [rancher/cli](https://hub.docker.com/r/rancher/cli/).
+
 # Docker - Rancher CLI
 
 This image is built from `scratch` so it is as small as possible with the Rancher CLI.
